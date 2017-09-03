@@ -9,15 +9,10 @@ Also included is a small program for bundeling files
 and the browser together in a TCRT image.
 
 
-Releases
---------
+Usage
+-----
 
-Currently there is the tcrt-bundler, have fun.
+Run the following to create the binary:
 
-
-Source
-------
-
-The source will be released, but it may take a while since
-this is the program which uses my own assembler, which is
-also not yet released (and also will be open source).
+    stack build
+    stack exec tapecart-browser
