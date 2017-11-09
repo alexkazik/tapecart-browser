@@ -3,7 +3,7 @@ module Tapecart where
 import           Asm.C64
 
 fakeTapecart :: Bool
-fakeTapecart = True
+fakeTapecart = False
 
 useFastLoader :: Bool
 useFastLoader = True
