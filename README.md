@@ -16,3 +16,9 @@ Run the following to create the binary:
 
     stack build
     stack exec tapecart-browser
+
+
+Binaries
+--------
+
+Compiled binaries are avilable in the [Releases](https://github.com/alexkazik/tapecart-browser/releases/latest) section.
