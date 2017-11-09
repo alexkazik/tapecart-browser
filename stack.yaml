@@ -15,7 +15,7 @@
 # resolver:
 #  name: custom-snapshot
 #  location: "./custom-snapshot.yaml"
-resolver: nightly-2017-09-03
+resolver: nightly-2017-10-08
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -37,7 +37,7 @@ resolver: nightly-2017-09-03
 # will not be run. This is useful for tweaking upstream packages.
 packages:
 - location: '.'
-- location: https://github.com/alexkazik/asm/archive/v0.4.0.zip
+- location: https://github.com/alexkazik/asm/archive/v0.5.0.zip
   subdirs:
   - asm-core
   - asm-data
@@ -49,8 +49,7 @@ packages:
 
 # Dependency packages to be pulled from upstream that are not in the resolver
 # (e.g., acme-missiles-0.3)
-extra-deps:
-- th-utilities-0.2.0.1
+extra-deps: []
 
 # Override default flag values for local packages and extra-deps
 flags: {}

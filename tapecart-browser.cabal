@@ -56,7 +56,7 @@ executable tapecart-browser
   }
   build-depends:
     -- assembler
-    { asm-c64 == 0.4.*
+    { asm-c64 == 0.5.*
     -- other resources
     , base
     , base64-bytestring

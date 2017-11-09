@@ -3,6 +3,7 @@ module Font where
 import           Data.Bool              (bool)
 import           Data.Char              (chr, isAsciiLower, isAsciiUpper, ord)
 import           Data.Traversable       (mapAccumL)
+import qualified Data.Vector.Unboxed    as UV
 import           Data.Version           (versionBranch)
 import           Text.Heredoc
 
@@ -11,8 +12,8 @@ import           Asm.C64
 import qualified Paths_tapecart_browser as CabalInfo
 import           Tapecart
 
-font :: [Word8]
-font = withSlicesOf 8 8 (renderHiresFg 0) $(imageWithUpdate "graphics/font.png")
+font :: UV.Vector Word8
+font = withSlicesOf 8 8 (snd . render1BitWidth [(black8, 0xf0 .|. 1)] 0) $(imageWithUpdate "graphics/font.png")
 
 colorSliderOff, colorSliderOn :: TInt64
 colorSliderOff = green4
