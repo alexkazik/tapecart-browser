@@ -5,9 +5,9 @@ module Main where
 import           Codec.Compression.BZip
 import           Control.Monad
 import qualified Data.ByteString.Base64.Lazy as B64
-import qualified Data.ByteString.Lazy        as BSL
+import qualified Data.ByteString.Lazy        as BL
 import qualified Data.Text                   as T
-import qualified Data.Text.Lazy.IO           as LT.IO
+import qualified Data.Text.Lazy.IO           as TLIO
 import qualified Data.Vector                 as V
 import           System.Directory
 
@@ -232,20 +232,20 @@ main = do
   let
     cr = compile code
   createDirectoryIfMissing False $(getRelativeFilePath "build")
-  LT.IO.writeFile $(getRelativeFilePath "build/browser.vs") (generateViceSybols cr)
-  LT.IO.writeFile $(getRelativeFilePath "build/browser.status") (crDumpState cr)
+  TLIO.writeFile $(getRelativeFilePath "build/browser.vs") (generateViceSybols cr)
+  TLIO.writeFile $(getRelativeFilePath "build/browser.status") (crDumpState cr)
   print (crPoolsStats cr)
   forM_ (lookup "out" (crPoolsWithData cr)) $ \(_start,poolData) -> do
     let
-      browser_bin = BSL.pack $ V.toList (fmap (final 0xff) poolData)
-    BSL.writeFile
+      browser_bin = BL.pack $ V.toList (fmap (final 0xff) poolData)
+    BL.writeFile
       $(getRelativeFilePath "build/browser.bin")
       browser_bin
-    BSL.writeFile
+    BL.writeFile
       $(getRelativeFilePath "build/tcrt-bundler.php")
       (
-        BSL.fromStrict $(embedFile "./tcrt-bundler_src.php") `BSL.append`
-        "\nfunction browser_bin(){ return bzdecompress(base64_decode('" `BSL.append`
-        B64.encode (compress browser_bin) `BSL.append`
+        BL.fromStrict $(embedFile "./tcrt-bundler_src.php") `BL.append`
+        "\nfunction browser_bin(){ return bzdecompress(base64_decode('" `BL.append`
+        B64.encode (compress browser_bin) `BL.append`
         "')); }\n"
       )
