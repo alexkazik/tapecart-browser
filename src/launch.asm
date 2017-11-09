@@ -6,6 +6,13 @@ run:
   sta vic.control1
   sta vic.sprite_enable
 
+  // cia2: stop & reset timer A
+  lda 0b1100.0000
+  sta cia2.controla
+  lda 0xff
+  sta cia2.timera.lo
+  sta cia2.timera.hi
+
   $if useFastLoader
     // wait until vertical blank
     ldx 14
@@ -129,6 +136,12 @@ run:
   sta kernal.vector.chrin.lo
   lda addr(our_chrin) >> 8
   sta kernal.vector.chrin.hi
+
+  // set current file (emulate read from drive 8)
+  lda 1
+  ldx 8
+  tay
+  jsr kernal.setlfs
 
   pointer code continue_reset = 0xfcfe
   jmp continue_reset
