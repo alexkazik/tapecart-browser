@@ -1,3 +1,8 @@
+## 1.4
+
+* Fix launching entries 107-126
+* Add support for separators
+
 ## 1.3
 
 * Initialise some more when launching a program
