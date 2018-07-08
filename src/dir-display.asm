@@ -176,7 +176,7 @@ do_invert:
     ldy 24-1
   __loop:
     lda [_directory], y
-    ora 0x80
+    eor 0x80
     sta [_display], y
     dey
     bpl __loop

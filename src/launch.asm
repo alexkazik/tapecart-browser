@@ -1,6 +1,24 @@
 block launch -- @ prog
 
 run:
+  // selected _entry
+  local lohi _entry @zp
+  lda drawStart
+  clc
+  adc drawOffset
+  tay
+  lda dirStartPositionsLo, y
+  sta _entry.lo
+  lda dirStartPositionsHi, y
+  sta _entry.hi
+
+  ldy 24
+  lda [_entry], y
+  cmp 0xf0
+  bcc _do_launch
+  jmp main.run
+_do_launch:
+
   // disable screen
   lda 0
   sta vic.control1
@@ -26,18 +44,6 @@ run:
     bne wait1
   $endif
 
-  // selected _entry
-  local lohi _entry @zp
-  lda drawStart
-  clc
-  adc drawOffset
-  tay
-  lda dirStartPositionsLo, y
-  sta _entry.lo
-  lda dirStartPositionsHi, y
-  sta _entry.hi
-  ldy 25
-
   // load the specified file
   $if useFastLoader
     lda $tapecartApiReadFlashFast
@@ -47,6 +53,7 @@ run:
   jsr tapecart.putbyte.run
 
   // start
+  ldy 25
   lda 0
   jsr tapecart.putbyte.run
   lda [_entry], y

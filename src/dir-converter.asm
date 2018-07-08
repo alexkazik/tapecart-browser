@@ -77,6 +77,14 @@ _set:
   rts
 
 exit:
+  // skip the 1st entry if it's a separator
+  {
+    lda DisplayFS[24]
+    cmp 0xf0
+    bne __skip
+    inc drawOffset
+  __skip:
+  }
   // calculate slider increase
   lda numEntries
   cmp 23+1
@@ -89,6 +97,50 @@ exit:
   sta drawStartLast
 
   rts
+
+add_separator:
+  // add begin
+  lda 25
+  sta [_dst], y
+  iny
+
+  // copy filename
+  {
+    ldx 0
+  __loop:
+    lda _tmpEntry.name, x
+    // check for valid char
+    beq __end_filename
+    cmp 0x20
+    bcc __invalid
+    cmp 0x7b
+    bcc __ok
+  __invalid:
+    lda 0x60
+  __ok:
+    ora 0x80
+    sta [_dst], y
+    inx
+    iny
+    cpx 15 // max length (the 16th is required for the "end" symbol)
+    bne __loop
+  __end_filename:
+  }
+  {
+    lda 26
+    sta [_dst], y
+    iny
+    lda 29
+  __loop:
+    sta [_dst], y
+    iny
+    cpy 23
+    bne __loop
+  }
+  lda 27
+  sta [_dst], y
+  iny
+  jmp copy_file_info
 
 run:
   sei
@@ -128,7 +180,11 @@ big_loop:
   ldx _tmpEntry.type
   lda typeToIcon, x
   bmi big_loop // unsupported type
-  beq exit
+  {
+    bne __skip
+    jmp exit
+  __skip:
+  }
 
   sta [_dst], y
   iny
@@ -136,6 +192,8 @@ big_loop:
   sta [_dst], y
   iny
 
+  cpx 0xf0
+  beq add_separator
   // check load address for 0x0801
   lda _tmpEntry.loadaddress.lo
   cmp 0x01
@@ -319,6 +377,8 @@ _done_size:
   lda 123
   sta [_dst], y
   iny
+
+copy_file_info:
 
   // copy file-info
   {

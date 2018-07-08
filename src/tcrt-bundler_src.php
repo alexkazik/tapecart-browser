@@ -37,29 +37,39 @@ while ($ln = fgetcsv($file, 0, ';')) {
   }
   if (count($ln) >= 3) {
     $type = intval($ln[2], 0);
-    if ($type < 0 || $type > 0xc0) {
+    if ($type < 0 || ($type > 0xc0 && $type != 0xf0)) {
       $type = 1;
     }
   } else {
     $type = 1;
   }
-  $sourceFile = $dir.DIRECTORY_SEPARATOR.trim($ln[0]);
-  if (!file_exists($sourceFile)) {
-    echo 'File not found: '.implode(';', $ln).PHP_EOL;
-    exit(1);
+  if ($type == 0xf0) {
+    $files[] = [
+      'name'        => trim($ln[1]),
+      'type'        => $type,
+      'loadaddress' => "\0\0",
+      'size'        => 0,
+      'data'        => '',
+    ];
+  } else {
+    $sourceFile = $dir.DIRECTORY_SEPARATOR.trim($ln[0]);
+    if (!file_exists($sourceFile)) {
+      echo 'File not found: '.implode(';', $ln).PHP_EOL;
+      exit(1);
+    }
+    $data = file_get_contents($sourceFile);
+    if (!is_string($data) || strlen($data) < 3) {
+      echo 'File too short (less than 3 bytes): '.implode(';', $ln).PHP_EOL;
+      exit(1);
+    }
+    $files[] = [
+      'name'        => trim($ln[1]),
+      'type'        => $type,
+      'loadaddress' => substr($data, 0, 2),
+      'size'        => strlen($data) - 2,
+      'data'        => substr($data, 2),
+    ];
   }
-  $data = file_get_contents($sourceFile);
-  if (!is_string($data) || strlen($data) < 3) {
-    echo 'File too short (less than 3 bytes): '.implode(';', $ln).PHP_EOL;
-    exit(1);
-  }
-  $files[] = [
-    'name'        => trim($ln[1]),
-    'type'        => $type,
-    'loadaddress' => substr($data, 0, 2),
-    'size'        => strlen($data) - 2,
-    'data'        => substr($data, 2),
-  ];
 }
 
 $fs = "\x02\x10TapcrtFileSys";
@@ -84,7 +94,7 @@ if (strlen($fs) > 0x1000) {
   exit(1);
 }
 
-if (strlen(padBlock($fs).$data) > 2*1024*1024) {
+if (strlen(padBlock($fs).$data) > 2 * 1024 * 1024) {
   echo 'Too big (max. 2 MiB)'.PHP_EOL;
   exit(1);
 }
