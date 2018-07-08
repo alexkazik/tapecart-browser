@@ -14,9 +14,9 @@ executables:
     source-dirs: src
     ghc-options:
       - -Wall
-      - -threaded
+      - -Werror
+      - -O0
       - -rtsopts
-      - -with-rtsopts=-N
     main: Main.hs
     dependencies:
       # assembler
