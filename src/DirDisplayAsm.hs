@@ -1,4 +1,6 @@
-module DirDisplayAsm where
+module DirDisplayAsm
+  ( dirDisplay
+  ) where
 
 import           Asm.C64
 

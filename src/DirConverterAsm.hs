@@ -1,4 +1,6 @@
-module DirConverterAsm where
+module DirConverterAsm
+  ( dirConverter
+  ) where
 
 import           Asm.C64
 

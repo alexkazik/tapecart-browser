@@ -1,4 +1,6 @@
-module LaunchAsm where
+module LaunchAsm
+  ( launch
+  ) where
 
 import           Asm.C64
 

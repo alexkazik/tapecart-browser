@@ -1,4 +1,6 @@
-module MathAsm where
+module MathAsm
+  ( math
+  ) where
 
 import           Asm.C64
 

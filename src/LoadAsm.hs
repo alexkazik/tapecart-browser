@@ -1,4 +1,6 @@
-module LoadAsm where
+module LoadAsm
+  ( load
+  ) where
 
 import           Asm.C64
 

@@ -1,4 +1,6 @@
-module TapecartAsm where
+module TapecartAsm
+  ( tapecart
+  ) where
 
 import           Asm.C64
 

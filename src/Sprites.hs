@@ -1,4 +1,6 @@
-module Sprites where
+module Sprites
+  ( sprites
+  ) where
 
 import           Asm.C64
 

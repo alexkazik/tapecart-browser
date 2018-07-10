@@ -1,4 +1,6 @@
-module InputAsm where
+module InputAsm
+  ( input
+  ) where
 
 import           Asm.C64
 

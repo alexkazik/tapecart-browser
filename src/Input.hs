@@ -1,4 +1,13 @@
-module Input where
+module Input
+  ( keyTableNoShift
+  , keyTableWithShift
+  , keyCsrUp
+  , keyCsrDwn
+  , keyCsrLft
+  , keyCsrRgt
+  , keyReturn
+  , keyF2
+  ) where
 
 import           Asm.C64
 

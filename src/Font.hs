@@ -1,4 +1,15 @@
-module Font where
+module Font
+  ( font
+  , screen
+  , colors
+  , charSliderTop
+  , charSliderBefore
+  , charSliderMiddle
+  , charSliderAfter
+  , charSliderBottom
+  , colorSliderOff
+  , colorSliderOn
+  ) where
 
 import           Data.Bool              (bool)
 import           Data.Char              (chr, isAsciiLower, isAsciiUpper, ord)

@@ -1,4 +1,7 @@
-module Macros where
+module Macros
+  ( macroAddConstToLoHi
+  , macroMul168
+  ) where
 
 import           Asm.C64
 

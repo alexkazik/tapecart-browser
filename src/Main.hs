@@ -1,6 +1,8 @@
 {-# LANGUAGE FlexibleContexts #-}
 
-module Main where
+module Main
+  ( main
+  ) where
 
 import           Codec.Compression.BZip
 import           Control.Monad

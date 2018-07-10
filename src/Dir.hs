@@ -1,4 +1,10 @@
-module Dir where
+module Dir
+  ( typeToIcon
+  , constPageScroll
+  , constKeepClear
+  , dirStartPositionsLo
+  , dirStartPositionsHi
+  ) where
 
 import           Asm.C64
 

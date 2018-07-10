@@ -1,4 +1,10 @@
-module Tapecart where
+module Tapecart
+  ( fakeTapecart
+  , useFastLoader
+  , tapecartApiReadFlash
+  , tapecartApiReadFlashFast
+  , tapecartApiReadLoadInfo
+  ) where
 
 import           Asm.C64
 
