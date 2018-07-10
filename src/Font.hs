@@ -16,7 +16,7 @@ import           Data.Char              (chr, isAsciiLower, isAsciiUpper, ord)
 import           Data.Traversable       (mapAccumL)
 import qualified Data.Vector.Unboxed    as UV
 import           Data.Version           (versionBranch)
-import           Text.Heredoc
+import           Text.Heredoc           (here)
 
 import           Asm.C64
 

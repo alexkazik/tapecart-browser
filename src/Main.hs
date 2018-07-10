@@ -4,14 +4,14 @@ module Main
   ( main
   ) where
 
-import           Codec.Compression.BZip
-import           Control.Monad
+import           Codec.Compression.BZip      (compress)
+import           Control.Monad               (forM_)
 import qualified Data.ByteString.Base64.Lazy as B64
 import qualified Data.ByteString.Lazy        as BL
 import qualified Data.Text                   as T
 import qualified Data.Text.Lazy.IO           as TLIO
 import qualified Data.Vector                 as V
-import           System.Directory
+import           System.Directory            (createDirectoryIfMissing)
 
 import           Asm.C64
 
