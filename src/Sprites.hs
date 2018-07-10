@@ -2,9 +2,9 @@ module Sprites
   ( sprites
   ) where
 
-import           Asm.C64
-
 import qualified Data.Vector.Unboxed as UV
+
+import           Asm.C64
 
 sprites :: [UV.Vector Word8]
 sprites =

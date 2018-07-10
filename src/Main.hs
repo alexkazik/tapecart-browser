@@ -9,7 +9,7 @@ import           Control.Monad               (forM_)
 import qualified Data.ByteString.Base64.Lazy as B64
 import qualified Data.ByteString.Lazy        as BL
 import qualified Data.Text                   as T
-import qualified Data.Text.Lazy.IO           as TLIO
+import qualified Data.Text.Lazy.IO           as TL
 import qualified Data.Vector                 as V
 import           System.Directory            (createDirectoryIfMissing)
 
@@ -234,8 +234,8 @@ main = do
   let
     cr = compile code
   createDirectoryIfMissing False $(getRelativeFilePath "build")
-  TLIO.writeFile $(getRelativeFilePath "build/browser.vs") (generateViceSybols cr)
-  TLIO.writeFile $(getRelativeFilePath "build/browser.status") (crDumpState cr)
+  TL.writeFile $(getRelativeFilePath "build/browser.vs") (generateViceSybols cr)
+  TL.writeFile $(getRelativeFilePath "build/browser.status") (crDumpState cr)
   print (crPoolsStats cr)
   forM_ (lookup "out" (crPoolsWithData cr)) $ \(_start,poolData) -> do
     let
