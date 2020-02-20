@@ -5,104 +5,104 @@
 
 packages:
 - completed:
-    size: 221143
+    size: 221137
     subdir: asm-core
-    url: https://github.com/alexkazik/asm/archive/v0.5.0.zip
+    url: https://github.com/alexkazik/asm/archive/v0.6.0.zip
     cabal-file:
-      size: 4015
-      sha256: 6c0eab6884baeea32fd4b0142bbd914e4e73d510da868204e104b24d2437b4bf
+      size: 4161
+      sha256: 9791b35822d2a60814f6b229a3dbeb0ba50f9d76df7a38fb0048229d4dba5dca
     name: asm-core
-    version: 0.5.0
-    sha256: 9223df82dd630be1fb28bb185780257dcd04c8506cb79ff7f4f6f8f698277e3c
+    version: 0.6.0
+    sha256: c962be14b40d575ec541f122ee0e082edfdb9950451cdf231cb27a09f286b393
     pantry-tree:
-      size: 6283
-      sha256: b2a942cc98650c48eff9dc883271f99fb26e775c5f56e846aca7c31b7e91d5cc
+      size: 6222
+      sha256: 465827e58441206579887232de12e334071a129ef6037014d0840d428dc15d28
   original:
     subdir: asm-core
-    url: https://github.com/alexkazik/asm/archive/v0.5.0.zip
+    url: https://github.com/alexkazik/asm/archive/v0.6.0.zip
 - completed:
-    size: 221143
+    size: 221137
     subdir: asm-data
-    url: https://github.com/alexkazik/asm/archive/v0.5.0.zip
+    url: https://github.com/alexkazik/asm/archive/v0.6.0.zip
     cabal-file:
-      size: 1093
-      sha256: 027db55090ff19c1ed4e87edc569b93418f780adc9c95311838780bf792df2d2
+      size: 1063
+      sha256: 282b0fd702392c2bbfb727d4672c8bea4c3b3ece6fadaf9c823bc487f968a8a0
     name: asm-data
-    version: 0.5.0
-    sha256: 9223df82dd630be1fb28bb185780257dcd04c8506cb79ff7f4f6f8f698277e3c
+    version: 0.6.0
+    sha256: c962be14b40d575ec541f122ee0e082edfdb9950451cdf231cb27a09f286b393
     pantry-tree:
-      size: 852
-      sha256: 95ec9e916cf225d1fd722f77a7d6f7a344b4a2962d3e045e071c57cfe3acef80
+      size: 789
+      sha256: fd20a265f3020996c1f437c16e3b16962b7b42a25dda279d4664f2ff96530d43
   original:
     subdir: asm-data
-    url: https://github.com/alexkazik/asm/archive/v0.5.0.zip
+    url: https://github.com/alexkazik/asm/archive/v0.6.0.zip
 - completed:
-    size: 221143
+    size: 221137
     subdir: asm-parser
-    url: https://github.com/alexkazik/asm/archive/v0.5.0.zip
+    url: https://github.com/alexkazik/asm/archive/v0.6.0.zip
     cabal-file:
-      size: 1987
-      sha256: 0750c9311781674dec080b2cabf63e577d239ba625c7b52bc5987797d4dd304e
+      size: 2062
+      sha256: 67bb1bfe7ae656aa842d649da5ebc406bd07985c66e6c9917202925376b797ae
     name: asm-parser
-    version: 0.5.0
-    sha256: 9223df82dd630be1fb28bb185780257dcd04c8506cb79ff7f4f6f8f698277e3c
+    version: 0.6.0
+    sha256: c962be14b40d575ec541f122ee0e082edfdb9950451cdf231cb27a09f286b393
     pantry-tree:
-      size: 2203
-      sha256: ee9fa92eb6d9a4b68177e1c360344a8b7489d0081be42f8a983a0f47bbb95f28
+      size: 2138
+      sha256: 5433a47f333d660c8a242ba17e4f18d6d9d5bc4b6b97fe2a7757f5869d7f8d0d
   original:
     subdir: asm-parser
-    url: https://github.com/alexkazik/asm/archive/v0.5.0.zip
+    url: https://github.com/alexkazik/asm/archive/v0.6.0.zip
 - completed:
-    size: 221143
+    size: 221137
     subdir: asm-cpu6502
-    url: https://github.com/alexkazik/asm/archive/v0.5.0.zip
+    url: https://github.com/alexkazik/asm/archive/v0.6.0.zip
     cabal-file:
-      size: 1505
-      sha256: 9f77fdb79badce0680c86a261552c37fe2f8feba9dc93abd3a6d1de753193793
+      size: 1501
+      sha256: b52776d27e0d33ced6ec4546b95660ffa51aae42df4ba5548484e73507fe6a77
     name: asm-cpu6502
-    version: 0.5.0
-    sha256: 9223df82dd630be1fb28bb185780257dcd04c8506cb79ff7f4f6f8f698277e3c
+    version: 0.6.0
+    sha256: c962be14b40d575ec541f122ee0e082edfdb9950451cdf231cb27a09f286b393
     pantry-tree:
-      size: 1601
-      sha256: fee7150f9c868acfafb385d2db158b613b316b55b9d0e65bb8fc6efd15167768
+      size: 1535
+      sha256: 1406ba88a1554e6be234c7a282f8ef77842dcc1b124a42456f05b8831e349af1
   original:
     subdir: asm-cpu6502
-    url: https://github.com/alexkazik/asm/archive/v0.5.0.zip
+    url: https://github.com/alexkazik/asm/archive/v0.6.0.zip
 - completed:
-    size: 221143
+    size: 221137
     subdir: asm-c64
-    url: https://github.com/alexkazik/asm/archive/v0.5.0.zip
+    url: https://github.com/alexkazik/asm/archive/v0.6.0.zip
     cabal-file:
-      size: 1185
-      sha256: 3bc177dd1f4187b0faa98f8cf99fbce99a8bb6d3f1eaf10be25052e1f5f6d391
+      size: 1199
+      sha256: f8e887ccecdcad6cb584d3b30490f6cec17c492d35fc182b4ece7f81a47eacff
     name: asm-c64
-    version: 0.5.0
-    sha256: 9223df82dd630be1fb28bb185780257dcd04c8506cb79ff7f4f6f8f698277e3c
+    version: 0.6.0
+    sha256: c962be14b40d575ec541f122ee0e082edfdb9950451cdf231cb27a09f286b393
     pantry-tree:
-      size: 849
-      sha256: 91f9916b6d3c86b94161a8f91e2334e370bc61b4767a37fe8e9811e228bdab73
+      size: 787
+      sha256: 33d9b0a4cd064759276b7e8334fb44d04da309cadb746a4c944da39e2c80788f
   original:
     subdir: asm-c64
-    url: https://github.com/alexkazik/asm/archive/v0.5.0.zip
+    url: https://github.com/alexkazik/asm/archive/v0.6.0.zip
 - completed:
-    size: 221143
+    size: 221137
     subdir: asm-tools
-    url: https://github.com/alexkazik/asm/archive/v0.5.0.zip
+    url: https://github.com/alexkazik/asm/archive/v0.6.0.zip
     cabal-file:
-      size: 1118
-      sha256: 26f2dbb4f7c3f1f358a446d9e20b82e9d2c67d5e1d33dbfc046d24ecc7e823ce
+      size: 1044
+      sha256: 13e78aebe8d7a18ec878d1e7be6bfab6b77a178e27fbb4592df5832ddad679c2
     name: asm-tools
-    version: 0.5.0
-    sha256: 9223df82dd630be1fb28bb185780257dcd04c8506cb79ff7f4f6f8f698277e3c
+    version: 0.6.0
+    sha256: c962be14b40d575ec541f122ee0e082edfdb9950451cdf231cb27a09f286b393
     pantry-tree:
-      size: 611
-      sha256: 3787c370619aa5e0282b77ad423d48dc7e7ef5f5002dd8869e8ad518e41db98d
+      size: 547
+      sha256: 9aa40584e1cf7fbead3e85a4a4816c488a285e6fa71312f8ebb69ff8fa246b2a
   original:
     subdir: asm-tools
-    url: https://github.com/alexkazik/asm/archive/v0.5.0.zip
+    url: https://github.com/alexkazik/asm/archive/v0.6.0.zip
 snapshots:
 - completed:
-    size: 505387
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/nightly/2017/10/8.yaml
-    sha256: 8f1ab922a23e795d7a22cf4594fe5ceedb7f87fdf2cf669e244cc3e1de52123e
-  original: nightly-2017-10-08
+    size: 523878
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/14/3.yaml
+    sha256: 470c46c27746a48c7c50f829efc0cf00112787a7804ee4ac7a27754658f6d92c
+  original: lts-14.3

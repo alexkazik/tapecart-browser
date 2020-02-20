@@ -20,7 +20,7 @@ executables:
     main: Main.hs
     dependencies:
       # assembler
-      - asm-c64 == 0.5.*
+      - asm-c64 == 0.6.*
       # other resources
       - base
       - base64-bytestring
