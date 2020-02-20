@@ -36,20 +36,19 @@ resolver: nightly-2017-10-08
 # non-dependency (i.e. a user package), and its test suites and benchmarks
 # will not be run. This is useful for tweaking upstream packages.
 packages:
-- location: '.'
-- location: https://github.com/alexkazik/asm/archive/v0.5.0.zip
-  subdirs:
-  - asm-core
-  - asm-data
-  - asm-parser
-  - asm-cpu6502
-  - asm-c64
-  - asm-tools
-  extra-dep: true
+- '.'
 
 # Dependency packages to be pulled from upstream that are not in the resolver
 # (e.g., acme-missiles-0.3)
-extra-deps: []
+extra-deps:
+- url: https://github.com/alexkazik/asm/archive/v0.5.0.zip
+  subdirs:
+    - asm-core
+    - asm-data
+    - asm-parser
+    - asm-cpu6502
+    - asm-c64
+    - asm-tools
 
 # Override default flag values for local packages and extra-deps
 flags: {}
